@@ -28,4 +28,11 @@ pipeline {
   environment {
     CI = 'true'
   }
+  post {
+    always {
+      archiveArtifacts(artifacts: 'src/*.js', fingerprint: true)
+
+    }
+
+  }
 }
